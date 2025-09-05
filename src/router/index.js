@@ -8,8 +8,11 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
-  routes,
+  history: createWebHistory('/best-taxi-pro2/'),
+  routes: [
+    {path: '/', name: 'Home', component: Home },
+    {path: '/tours', name: 'Tours', component: Tours },
+  ],
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) return savedPosition
     if (to.hash) {
